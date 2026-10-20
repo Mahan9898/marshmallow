@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4a5759">
+<title>Cafe Marshmallow | منو</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+:root{--dark:#4a5759;--sage:#b0c4b1;--beige:#dedbd2;--cream:#f7e1d7;--pink:#edafb8;--r:24px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Vazirmatn',Tahoma,sans-serif;background:var(--cream);color:var(--dark);line-height:1.8;padding-bottom:96px}
+button{font-family:inherit;cursor:pointer;border:0;color:inherit;background:none}
+:focus-visible{outline:3px solid var(--dark);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:15;display:flex;justify-content:space-between;align-items:center;padding:10px 18px;background:rgba(74,87,89,.96);backdrop-filter:blur(8px);color:var(--cream)}
+nav .brand{font-family:'Pacifico',cursive;font-size:1.35rem;direction:ltr}
+nav a{color:var(--cream);text-decoration:none;font-size:.9rem;padding:6px 14px;border-radius:20px;background:rgba(247,225,215,.14)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--pink);text-align:center;padding:54px 18px 110px}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:40px;background:radial-gradient(circle at 20px 0,var(--cream) 19px,transparent 20px) 0 0/40px 40px repeat-x}
+.blob{position:absolute;border-radius:50%;opacity:.55;animation:float 7s ease-in-out infinite}
+.blob.a{width:120px;height:120px;background:var(--cream);top:-30px;right:-30px}
+.blob.b{width:80px;height:80px;background:var(--sage);bottom:60px;left:6%;animation-delay:-2s}
+.blob.c{width:46px;height:46px;background:var(--beige);top:38%;right:10%;animation-delay:-4s}
+@keyframes float{50%{transform:translateY(-14px) rotate(6deg)}}
+.logo{width:120px;height:120px;position:relative;filter:drop-shadow(0 8px 0 rgba(74,87,89,.18))}
+.hero h1{position:relative;font-family:'Pacifico',cursive;font-weight:400;font-size:clamp(2.8rem,12vw,6rem);line-height:1.25;direction:ltr;margin-top:6px}
+.hero p{position:relative;max-width:460px;margin:6px auto 22px;font-size:1.05rem}
+.cta{position:relative;display:inline-block;background:var(--dark);color:var(--cream);text-decoration:none;font-weight:800;padding:13px 34px;border-radius:40px;box-shadow:0 5px 0 rgba(74,87,89,.35);transition:transform .15s}
+.cta:hover{transform:translateY(-3px)}
+.facts{position:relative;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px;font-size:.85rem}
+.facts span{background:rgba(247,225,215,.75);padding:3px 14px;border-radius:20px}
+
+/* categories */
+main{max-width:980px;margin:0 auto;padding:34px 16px 10px}
+.title{text-align:center;margin-bottom:24px}
+.title h2{font-size:1.7rem}
+.title p{opacity:.8;font-size:.95rem}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(min-width:760px){.grid{grid-template-columns:repeat(4,1fr);gap:20px}}
+.box{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:190px;padding:22px 10px;border-radius:var(--r);font-weight:800;text-align:center;box-shadow:0 7px 0 var(--dark);border:3px solid var(--dark);transition:transform .18s,box-shadow .18s}
+.box:hover{transform:translateY(-5px);box-shadow:0 12px 0 var(--dark)}
+.box:active{transform:translateY(5px);box-shadow:0 2px 0 var(--dark)}
+.box .ic{width:66px;height:66px;background:var(--cream);border-radius:50%;display:grid;place-items:center;border:3px solid var(--dark)}
+.box .ic svg{width:40px;height:40px}
+.box small{font-weight:400;font-size:.82rem}
+.box .badge{position:absolute;top:10px;left:10px;min-width:30px;height:30px;padding:0 8px;border-radius:15px;background:var(--dark);color:var(--cream);font-size:.85rem;display:none;place-items:center}
+.box .badge.on{display:grid;animation:pop .3s}
+@keyframes pop{50%{transform:scale(1.4)}}
+.c0{background:var(--sage)}.c1{background:var(--pink)}.c2{background:var(--beige)}.c3{background:var(--sage)}
+
+/* info */
+.info{max-width:980px;margin:40px auto 0;padding:0 16px;display:grid;gap:14px}
+.info{grid-template-columns:1fr 1fr}
+.info .iic{display:grid;place-items:center;width:60px;height:60px;margin:0 auto 8px;border-radius:50%;background:var(--cream);border:3px solid var(--dark)}
+.info .iic svg{width:34px;height:34px}
+@media(max-width:480px){.info{gap:10px}.info div{padding:16px 10px;font-size:.9rem}.info .iic{width:50px;height:50px}.info .iic svg{width:28px;height:28px}}
+@media(max-width:340px){.info{grid-template-columns:1fr}}
+.info div{background:var(--beige);border-radius:var(--r);padding:20px;text-align:center}
+.info b{display:block;margin-bottom:2px}
+footer{text-align:center;padding:34px 16px 10px;font-size:.85rem;opacity:.8}
+
+/* overlays */
+.overlay{position:fixed;inset:0;z-index:30;display:none;align-items:flex-end;justify-content:center;background:rgba(74,87,89,.65);backdrop-filter:blur(3px)}
+.overlay.open{display:flex}
+@media(min-width:760px){.overlay{align-items:center}}
+.sheet{width:100%;max-width:580px;max-height:90vh;display:flex;flex-direction:column;background:var(--cream);border-radius:var(--r) var(--r) 0 0;animation:up .28s cubic-bezier(.2,.8,.3,1);overflow:hidden}
+@media(min-width:760px){.sheet{border-radius:var(--r)}}
+@keyframes up{from{transform:translateY(50px);opacity:0}}
+.sh-head{display:flex;align-items:center;gap:12px;padding:16px 20px;background:var(--dark);color:var(--cream)}
+.sh-head h2{flex:1;font-size:1.25rem}
+.x{width:38px;height:38px;border-radius:50%;background:var(--pink);color:var(--dark);font-size:1.1rem;font-weight:800}
+.items{overflow-y:auto;padding:6px 20px}
+.item{display:flex;align-items:center;gap:12px;padding:14px 0}
+.item+.item{border-top:2px dashed var(--beige)}
+.item .txt{flex:1}
+.item .nm{font-weight:600}
+.item .pr{font-size:.88rem;opacity:.8}
+.item.sel .nm{color:#2f3b3c}
+.item.sel .nm::after{content:" ✓";color:#6f9a72}
+.ctr{display:flex;align-items:center;background:var(--beige);border-radius:30px;padding:4px}
+.ctr button{width:36px;height:36px;border-radius:50%;font-size:1.25rem;font-weight:800;transition:transform .1s}
+.ctr button:active{transform:scale(.88)}
+.ctr .p{background:var(--dark);color:var(--cream)}
+.ctr .m{color:var(--dark)}
+.ctr span{min-width:30px;text-align:center;font-weight:800}
+.sh-foot{padding:14px 20px;border-top:3px solid var(--beige);display:flex;align-items:center;gap:12px}
+.sh-foot .sub{flex:1;font-size:.9rem;line-height:1.4}
+.btn{padding:13px 26px;border-radius:16px;background:var(--dark);color:var(--cream);font-weight:800;font-size:1rem}
+.btn.alt{background:var(--pink);color:var(--dark)}
+.btn.ghost{background:var(--beige);color:var(--dark)}
+
+/* receipt */
+.receipt{width:calc(100% - 32px);max-width:400px;max-height:92vh;overflow-y:auto;align-self:center;background:#fff;color:var(--dark);padding:26px 22px 30px;animation:up .28s;
+  -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/20px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/20px 100%}
+.receipt .head{text-align:center;border-bottom:2px dashed var(--sage);padding-bottom:12px;margin-bottom:12px}
+.receipt .head b{font-family:'Pacifico',cursive;font-weight:400;font-size:1.6rem;direction:ltr;display:block}
+.receipt .head small{display:block;font-size:.8rem;opacity:.8}
+.r-row{display:flex;gap:8px;padding:6px 0;font-size:.95rem}
+.r-row .n{flex:1}
+.r-row .q{width:34px;text-align:center;background:var(--cream);border-radius:8px;font-weight:800;height:26px;line-height:26px}
+.r-row .t{min-width:90px;text-align:left}
+.r-total{display:flex;justify-content:space-between;margin:14px 0;padding-top:12px;border-top:2px dashed var(--sage);font-weight:800;font-size:1.2rem}
+.r-act{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.r-act .btn{padding:11px 8px;font-size:.9rem}
+.r-act .full{grid-column:1/-1}
+
+/* floating cart + toast */
+.cartbar{position:fixed;bottom:0;left:0;right:0;z-index:20;display:flex;align-items:center;gap:14px;padding:12px 18px;background:var(--dark);color:var(--cream);border-radius:22px 22px 0 0;box-shadow:0 -6px 20px rgba(74,87,89,.3)}
+.cartbar .cnt{position:relative;width:46px;height:46px;border-radius:50%;background:var(--pink);color:var(--dark);display:grid;place-items:center;font-weight:800}
+.cartbar .cnt.bump{animation:pop .3s}
+.cartbar .tx{flex:1;line-height:1.4;font-size:.85rem}
+.cartbar .tx b{font-size:1.1rem;display:block}
+.cartbar .btn{background:var(--pink);color:var(--dark)}
+.cartbar .btn:disabled{opacity:.45;cursor:not-allowed}
+.toast{position:fixed;bottom:92px;left:50%;transform:translate(-50%,20px);background:var(--sage);color:var(--dark);font-weight:600;padding:8px 20px;border-radius:30px;border:2px solid var(--dark);opacity:0;pointer-events:none;transition:.25s;z-index:40;white-space:nowrap}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+/* other categories inside sheet */
+.others{margin:10px -20px 0;padding:22px 20px 26px;background:var(--beige);text-align:center}
+.others h3{font-size:1rem;margin-bottom:2px}
+.others p{font-size:.82rem;opacity:.75;margin-bottom:14px}
+.og{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mini{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:18px;border:3px solid var(--dark);box-shadow:0 4px 0 var(--dark);font-weight:800;font-size:.92rem;text-align:right;transition:transform .15s}
+.mini:active{transform:translateY(3px);box-shadow:0 1px 0 var(--dark)}
+.mini .ic2{flex:none;width:38px;height:38px;border-radius:50%;background:var(--cream);display:grid;place-items:center}
+.mini .ic2 svg{width:24px;height:24px}
+.mini small{display:block;font-weight:400;font-size:.75rem}
+.mini.c0,.mini.c3{background:var(--sage)}.mini.c1{background:var(--pink)}.mini.c2{background:var(--cream)}
+
+/* responsive */
+body{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+.sheet{max-height:90vh;max-height:90dvh}
+.cartbar{padding-bottom:calc(12px + env(safe-area-inset-bottom))}
+.toast{bottom:calc(92px + env(safe-area-inset-bottom));max-width:90vw;overflow:hidden;text-overflow:ellipsis}
+@media(min-width:1000px){.grid{gap:26px}.box{min-height:220px}}
+@media(max-width:480px){
+  .hero{padding:40px 14px 96px}
+  .logo{width:96px;height:96px}
+  .grid{gap:12px}
+  .box{min-height:160px;padding:18px 8px;font-size:.95rem}
+  .box .ic{width:56px;height:56px}.box .ic svg{width:34px;height:34px}
+  .title h2{font-size:1.4rem}
+  .sh-head{padding:14px 16px}.items{padding:4px 16px}.others{margin:10px -16px 0}
+  .sh-foot{padding:12px 16px}.btn{padding:12px 18px}
+  .cartbar{gap:10px;padding-left:12px;padding-right:12px}
+  .cartbar .cnt{width:40px;height:40px}
+  .og{gap:8px}.mini{padding:8px;gap:8px;font-size:.85rem}
+}
+@media(max-width:360px){
+  .og{grid-template-columns:1fr}
+  .cartbar .btn{padding:11px 12px;font-size:.9rem}
+  .r-act{grid-template-columns:1fr}
+}
+@media(max-height:520px) and (orientation:landscape){.sheet{max-height:96dvh}.hero{padding-bottom:80px}}
+/* info strip */
+.info{width:calc(100% - 32px);padding:0;gap:0;background:#fff;color:var(--dark);border:3px solid var(--dark);border-radius:20px;overflow:hidden;line-height:1.6}
+.info div{display:flex;align-items:center;gap:12px;text-align:right;background:none;border-radius:0;padding:16px 20px;font-size:.92rem}
+.info div+div{border-right:2px dashed rgba(74,87,89,.45)}
+.info b{margin:0;font-size:.98rem}
+.info .iic{flex:none;margin:0;width:40px;height:40px;border:0;border-radius:12px;background:var(--cream)}
+.info .iic svg{width:24px;height:24px}
+@media(max-width:480px){
+  .info{grid-template-columns:1fr}
+  .info div{flex-direction:column;text-align:center;gap:6px;padding:16px 12px;font-size:.92rem;line-height:1.6}
+  .info div:nth-child(2){order:-1}
+  .info div+div{border-right:0}
+  .info div:first-child{border-top:2px dashed rgba(74,87,89,.45)}
+  .info b{display:block;font-size:.95rem}
+  .info .iic{width:40px;height:40px;margin:0}.info .iic svg{width:24px;height:24px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{body>*:not(.overlay){display:none!important}.overlay{position:static;background:none;display:block}.r-act{display:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <g fill="none" stroke="#4a5759" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <symbol id="i0" viewBox="0 0 48 48"><path d="M12 14h24l-3 28H15z" fill="#edafb8"/><path d="M10 14h28M26 14l5-10h6"/><path d="M16 26h16"/></symbol>
+  <symbol id="i1" viewBox="0 0 48 48"><path d="M8 18h26v12a10 10 0 0 1-10 10h-6A10 10 0 0 1 8 30z" fill="#b0c4b1"/><path d="M34 21h3a5 5 0 0 1 0 10h-3M16 6c0 4-3 4-3 8M24 6c0 4-3 4-3 8"/></symbol>
+  <symbol id="i2" viewBox="0 0 48 48"><path d="M6 36V22L42 12v24z" fill="#edafb8"/><path d="M6 22l36-10M6 36h36"/><circle cx="30" cy="9" r="3" fill="#f7e1d7"/></symbol>
+  <symbol id="i3" viewBox="0 0 48 48"><circle cx="20" cy="26" r="15" fill="#b0c4b1"/><path d="M35 26h10"/><path d="M11 24c0-6 6-9 10-7s9 2 8 8-7 9-12 8-6-4-6-9z" fill="#fff"/><circle cx="21" cy="26" r="4.5" fill="#edafb8"/></symbol>
+  </g>
+</svg>
+
+<nav><span class="brand">Marshmallow</span><a href="#menu">مشاهده منو</a></nav>
+
+<header class="hero">
+  <i class="blob a"></i><i class="blob b"></i><i class="blob c"></i>
+  <svg class="logo" viewBox="0 0 120 120" aria-hidden="true">
+    <path d="M40 22c0-8 8-8 8-16M60 22c0-8 8-8 8-16M80 22c0-8 8-8 8-16" fill="none" stroke="#4a5759" stroke-width="4" stroke-linecap="round"/>
+    <rect x="32" y="34" width="50" height="34" rx="12" fill="#f7e1d7" stroke="#4a5759" stroke-width="4"/>
+    <circle cx="48" cy="52" r="3" fill="#4a5759"/><circle cx="66" cy="52" r="3" fill="#4a5759"/>
+    <path d="M52 58q5 5 10 0" fill="none" stroke="#4a5759" stroke-width="3" stroke-linecap="round"/>
+    <path d="M18 62h84l-10 40q-3 10-14 10H42q-11 0-14-10z" fill="#b0c4b1" stroke="#4a5759" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M100 70h6q10 0 10 12t-12 12h-6" fill="none" stroke="#4a5759" stroke-width="4" stroke-linecap="round"/>
+  </svg>
+  <h1>Cafe Marshmallow</h1>
+  <p>قهوه‌ی خوب، شیرینی خانگی و یک گوشه‌ی نرم و دنج مثل مارشمالو.</p>
+  <a class="cta" href="#menu">سفارش بدهید</a>
+  <div class="facts"><span>☕ قهوه تازه‌دم</span><span>🍰 شیرینی خانگی</span><span>🍳 صبحانه</span></div>
+</header>
+
+<main id="menu">
+  <div class="title"><h2>منوی کافه</h2><p>یک دسته را انتخاب کنید و آیتم‌ها را به سفارش اضافه کنید</p></div>
+  <div class="grid" id="grid"></div>
+</main>
+
+<section class="info">
+  <div>
+    <span class="iic"><svg viewBox="0 0 48 48" fill="none" stroke="#4a5759" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="18" fill="#edafb8"/><path d="M24 12v12l8 5"/></svg></span>
+    <b>ساعت کاری</b>هر روز ۹ صبح تا ۱۰ شب
+  </div>
+  <div>
+    <span class="iic"><svg viewBox="0 0 48 48" fill="none" stroke="#4a5759" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 44C14 32 10 26 10 19a14 14 0 0 1 28 0c0 7-4 13-14 25z" fill="#b0c4b1"/><circle cx="24" cy="19" r="5" fill="#f7e1d7"/></svg></span>
+    <b>آدرس</b>بهارستان، الفت غربی، کوچه زمزم
+  </div>
+</section>
+
+<!-- menu sheet -->
+<div class="overlay" id="menuO">
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="mt">
+    <div class="sh-head"><h2 id="mt"></h2><button class="x" id="menuX" aria-label="بستن">✕</button></div>
+    <div class="items" id="items"></div>
+    <div class="sh-foot"><div class="sub" id="catSub"></div><button class="btn" id="menuOk">تأیید</button></div>
+  </div>
+</div>
+
+<!-- receipt -->
+<div class="overlay" id="invO">
+  <div class="receipt" role="dialog" aria-modal="true" aria-label="فاکتور">
+    <div class="head"><b>Cafe Marshmallow</b><small id="invMeta"></small></div>
+    <div id="invRows"></div>
+    <div class="r-total"><span>جمع کل</span><span id="invTotal"></span></div>
+    <div class="r-act">
+      <button class="btn" id="printBtn">چاپ فاکتور</button>
+      <button class="btn alt" id="copyBtn">کپی متن</button>
+      <button class="btn ghost" id="invX">بستن</button>
+      <button class="btn ghost" id="clearBtn">پاک کردن سفارش</button>
+    </div>
+  </div>
+</div>
+
+<div class="cartbar">
+  <div class="cnt" id="cnt">۰</div>
+  <div class="tx">سفارش شما<b id="total">۰ تومان</b></div>
+  <button class="btn" id="invBtn" disabled>نمایش فاکتور</button>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const UNIT="تومان"; // اگر قیمت‌ها هزار تومان است: "هزار تومان"
+const cats=[
+ {t:"نوشیدنی‌های سرد",i:[["شیک شکلات",190],["شیک وانیل",190],["آیس کارامل ماکیاتو",190],["آیس لاته",160],["آیس آمریکانو",120]]},
+ {t:"نوشیدنی‌های گرم",i:[["قهوه سینگل",70],["قهوه دوبل",90],["هات چاکلت",170],["کاپوچینو",170],["کاپوچینو کلاسیک",190],["شیرکاکائو",130],["لاته",160],["چایی",60],["چایی طعم‌دار و نبات",90],["چایی ماسالا",150],["چایی کرک",160],["اسپرسو رومانو",100],["هانی اسپرسو",150],["لاته زعفران",200]]},
+ {t:"شیرینی و کیک",i:[["شیرینی خانگی و کیک روز",160],["کوکی",70],["کیک براونی",100]]},
+ {t:"غذا و صبحانه",i:[["ذرت مکزیکی بزرگ",198],["ذرت مکزیکی کوچک",148],["کمپیر",265],["نیمرو",89],["سوسیس تخم‌مرغ",110],["املت",140],["پاستا آلفردو",350],["پاستا آلفردو اقتصادی",300]]}
+];
+const $=id=>document.getElementById(id), fa=n=>Number(n).toLocaleString("fa-IR"), money=n=>fa(n)+" "+UNIT;
+let cart={}, cur=0;
+try{cart=JSON.parse(localStorage.getItem("mm-cart"))||{}}catch(e){}
+
+/* categories */
+cats.forEach((c,k)=>{
+  const b=document.createElement("button");
+  b.className="box c"+k;
+  b.innerHTML=`<span class="badge" id="bd${k}"></span><span class="ic"><svg><use href="#i${k}"/></svg></span><span>${c.t}</span><small>${fa(c.i.length)} آیتم</small>`;
+  b.onclick=()=>openMenu(k);
+  $("grid").appendChild(b);
+});
+
+/* menu */
+function openMenu(k){
+  cur=k; $("mt").textContent=cats[k].t;
+  const box=$("items"); box.innerHTML="";
+  cats[k].i.forEach(([n,p])=>{
+    const r=document.createElement("div");
+    r.className="item";
+    r.innerHTML=`<div class="txt"><div class="nm">${n}</div><div class="pr">${money(p)}</div></div>
+    <div class="ctr"><button class="p" aria-label="افزودن ${n}">+</button><span></span><button class="m" aria-label="کم کردن ${n}">−</button></div>`;
+    const sp=r.querySelector("span"),sync=()=>{const q=cart[n]?.q||0;sp.textContent=fa(q);r.classList.toggle("sel",q>0);catSub()};
+    r.querySelector(".p").onclick=()=>{change(n,p,1);sync();toast(n+" اضافه شد")};
+    r.querySelector(".m").onclick=()=>{change(n,p,-1);sync()};
+    sync(); box.appendChild(r);
+  });
+  const o=document.createElement("div");
+  o.className="others";
+  o.innerHTML=`<h3>دسته‌های دیگر منو</h3><p>یکی را انتخاب کنید تا آیتم‌هایش باز شود</p><div class="og"></div>`;
+  cats.forEach((c,j)=>{
+    if(j===k)return;
+    const m=document.createElement("button");
+    m.className="mini c"+j;
+    m.innerHTML=`<span class="ic2"><svg><use href="#i${j}"/></svg></span><span>${c.t}<small>${fa(c.i.length)} آیتم</small></span>`;
+    m.onclick=()=>openMenu(j);
+    o.querySelector(".og").appendChild(m);
+  });
+  box.appendChild(o);
+  $("menuO").classList.add("open"); box.scrollTop=0;
+}
+function catSub(){
+  let q=0,s=0;cats[cur].i.forEach(([n,p])=>{const x=cart[n]?.q||0;q+=x;s+=x*p});
+  $("catSub").innerHTML=q?`${fa(q)} آیتم از این دسته<br><b>${money(s)}</b>`:"هنوز آیتمی انتخاب نشده";
+}
+const closeMenu=()=>$("menuO").classList.remove("open");
+$("menuX").onclick=$("menuOk").onclick=closeMenu;
+$("menuO").onclick=e=>e.target.id=="menuO"&&closeMenu();
+
+/* cart */
+function change(n,p,d){
+  const q=(cart[n]?.q||0)+d;
+  if(q<=0)delete cart[n];else cart[n]={p,q};
+  try{localStorage.setItem("mm-cart",JSON.stringify(cart))}catch(e){}
+  refresh(true);
+}
+function sum(){let c=0,s=0;for(const k in cart){c+=cart[k].q;s+=cart[k].q*cart[k].p}return{c,s}}
+function refresh(bump){
+  const{c,s}=sum();
+  $("cnt").textContent=fa(c);$("total").textContent=money(s);$("invBtn").disabled=!c;
+  if(bump){$("cnt").classList.remove("bump");void $("cnt").offsetWidth;$("cnt").classList.add("bump")}
+  cats.forEach((cat,k)=>{const q=cat.i.reduce((a,[n])=>a+(cart[n]?.q||0),0),b=$("bd"+k);b.textContent=fa(q);b.classList.toggle("on",q>0)});
+}
+let tt;function toast(m){const t=$("toast");t.textContent=m;t.classList.add("show");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("show"),1200)}
+
+/* invoice */
+let invText="";
+$("invBtn").onclick=()=>{
+  const rows=$("invRows");rows.innerHTML="";const no=fa(Math.floor(1000+Math.random()*9000));
+  const d=new Date().toLocaleDateString("fa-IR")+" - "+new Date().toLocaleTimeString("fa-IR",{hour:"2-digit",minute:"2-digit"});
+  $("invMeta").textContent=`شماره سفارش ${no} | ${d}`;
+  invText=`Cafe Marshmallow\nسفارش ${no} - ${d}\n\n`;
+  for(const n in cart){
+    const{p,q}=cart[n];
+    rows.insertAdjacentHTML("beforeend",`<div class="r-row"><span class="n">${n}</span><span class="q">${fa(q)}</span><span class="t">${money(p*q)}</span></div>`);
+    invText+=`${n} x${fa(q)} = ${money(p*q)}\n`;
+  }
+  const s=sum().s;$("invTotal").textContent=money(s);invText+=`\nجمع کل: ${money(s)}`;
+  $("invO").classList.add("open");
+};
+const closeInv=()=>$("invO").classList.remove("open");
+$("invX").onclick=closeInv;
+$("invO").onclick=e=>e.target.id=="invO"&&closeInv();
+$("printBtn").onclick=()=>window.print();
+$("copyBtn").onclick=()=>{navigator.clipboard?.writeText(invText).then(()=>toast("فاکتور کپی شد"),()=>toast("کپی انجام نشد"))};
+$("clearBtn").onclick=()=>{cart={};try{localStorage.removeItem("mm-cart")}catch(e){};refresh();closeInv();toast("سفارش پاک شد")};
+document.addEventListener("keydown",e=>{if(e.key=="Escape"){closeMenu();closeInv()}});
+refresh();
+</script>
+</body>
+</html>
