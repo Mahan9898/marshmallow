@@ -6,7 +6,6 @@
 <meta name="theme-color" content="#4a5759">
 <title>Cafe Marshmallow | منو</title>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&family=Pacifico&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="favicon.png">
 <style>
 :root{--dark:#4a5759;--sage:#b0c4b1;--beige:#dedbd2;--cream:#f7e1d7;--pink:#edafb8;--r:24px}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -175,7 +174,6 @@ body{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
   .info .iic{width:40px;height:40px;margin:0}.info .iic svg{width:24px;height:24px}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-@media print{body>*:not(.overlay){display:none!important}.overlay{position:static;background:none;display:block}.r-act{display:none}}
 </style>
 </head>
 <body>
@@ -222,6 +220,7 @@ body{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
     <b>آدرس</b>بهارستان، الفت غربی، کوچه زمزم
   </div>
 </section>
+<footer>© Cafe Marshmallow · پروژه‌ی دانشگاهی</footer>
 
 <!-- menu sheet -->
 <div class="overlay" id="menuO">
@@ -239,10 +238,9 @@ body{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
     <div id="invRows"></div>
     <div class="r-total"><span>جمع کل</span><span id="invTotal"></span></div>
     <div class="r-act">
-      <button class="btn" id="printBtn">چاپ فاکتور</button>
       <button class="btn alt" id="copyBtn">کپی متن</button>
-      <button class="btn ghost" id="invX">بستن</button>
       <button class="btn ghost" id="clearBtn">پاک کردن سفارش</button>
+      <button class="btn full" id="invX">بستن</button>
     </div>
   </div>
 </div>
@@ -345,7 +343,6 @@ $("invBtn").onclick=()=>{
 const closeInv=()=>$("invO").classList.remove("open");
 $("invX").onclick=closeInv;
 $("invO").onclick=e=>e.target.id=="invO"&&closeInv();
-$("printBtn").onclick=()=>window.print();
 $("copyBtn").onclick=()=>{navigator.clipboard?.writeText(invText).then(()=>toast("فاکتور کپی شد"),()=>toast("کپی انجام نشد"))};
 $("clearBtn").onclick=()=>{cart={};try{localStorage.removeItem("mm-cart")}catch(e){};refresh();closeInv();toast("سفارش پاک شد")};
 document.addEventListener("keydown",e=>{if(e.key=="Escape"){closeMenu();closeInv()}});
