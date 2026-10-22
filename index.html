@@ -56,7 +56,7 @@ main{max-width:980px;margin:0 auto;padding:34px 16px 10px}
 
 /* info */
 .info{max-width:980px;margin:40px auto 0;padding:0 16px;display:grid;gap:14px}
-.info{grid-template-columns:1fr 1fr}
+.info{grid-template-columns:repeat(3,1fr)}
 .info .iic{display:grid;place-items:center;width:60px;height:60px;margin:0 auto 8px;border-radius:50%;background:var(--cream);border:3px solid var(--dark)}
 .info .iic svg{width:34px;height:34px}
 @media(max-width:480px){.info{gap:10px}.info div{padding:16px 10px;font-size:.9rem}.info .iic{width:50px;height:50px}.info .iic svg{width:28px;height:28px}}
@@ -162,14 +162,16 @@ body{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
 .info div{display:flex;align-items:center;gap:12px;text-align:right;background:none;border-radius:0;padding:16px 20px;font-size:.92rem}
 .info div+div{border-right:2px dashed rgba(74,87,89,.45)}
 .info b{margin:0;font-size:.98rem}
+.info .tx{display:block}
+.info .tel{display:block;color:var(--dark);text-decoration:none;font-weight:600}
 .info .iic{flex:none;margin:0;width:40px;height:40px;border:0;border-radius:12px;background:var(--cream)}
 .info .iic svg{width:24px;height:24px}
-@media(max-width:480px){
+@media(max-width:600px){
   .info{grid-template-columns:1fr}
   .info div{flex-direction:column;text-align:center;gap:6px;padding:16px 12px;font-size:.92rem;line-height:1.6}
   .info div:nth-child(2){order:-1}
   .info div+div{border-right:0}
-  .info div:first-child{border-top:2px dashed rgba(74,87,89,.45)}
+  .info div:first-child,.info div:nth-child(3){border-top:2px dashed rgba(74,87,89,.45)}
   .info b{display:block;font-size:.95rem}
   .info .iic{width:40px;height:40px;margin:0}.info .iic svg{width:24px;height:24px}
 }
@@ -213,11 +215,15 @@ body{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
 <section class="info">
   <div>
     <span class="iic"><svg viewBox="0 0 48 48" fill="none" stroke="#4a5759" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="18" fill="#edafb8"/><path d="M24 12v12l8 5"/></svg></span>
-    <b>ساعت کاری</b>هر روز ۹ صبح تا ۱۰ شب
+    <span class="tx"><b>ساعت کاری</b>هر روز ۹ صبح تا ۱۰ شب</span>
   </div>
   <div>
     <span class="iic"><svg viewBox="0 0 48 48" fill="none" stroke="#4a5759" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 44C14 32 10 26 10 19a14 14 0 0 1 28 0c0 7-4 13-14 25z" fill="#b0c4b1"/><circle cx="24" cy="19" r="5" fill="#f7e1d7"/></svg></span>
-    <b>آدرس</b>بهارستان، الفت غربی، کوچه زمزم
+    <span class="tx"><b>آدرس</b>بهارستان، الفت غربی، کوچه زمزم</span>
+  </div>
+  <div>
+    <span class="iic"><svg viewBox="0 0 48 48" fill="none" stroke="#4a5759" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6h8l4 10-5 3a22 22 0 0 0 10 10l3-5 10 4v8a4 4 0 0 1-4 4C22 40 8 26 8 10a4 4 0 0 1 4-4z" fill="#edafb8"/></svg></span>
+    <span class="tx"><b>تماس با ما</b><a class="tel" href="tel:03136821522" dir="ltr">۰۳۱۳۶۸۲۱۵۲۲</a></span>
   </div>
 </section>
 
